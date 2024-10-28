@@ -1,0 +1,42 @@
+import java.util.*;
+import java.io.*;
+
+public class BT1{
+	
+	static int n;
+	static boolean[] used = new boolean[20];
+	static int[] a = new int[20];
+	
+	public static void out()
+	{
+		for(int i=1; i<=n; i++)
+		{
+			System.out.print(a[i] + " ");
+		}
+		System.out.println();
+	}
+	public static void thu(int k)
+	{
+		for(int i=1; i<=n; i++)
+		{
+			if(!used[i])
+			{
+				a[k]=i;
+				used[i]=true;
+				
+				if(k == n)
+					out();
+				else 
+					thu(k+1);
+				used[i]=false;
+							
+			}
+		}
+	}
+    public static void main(String []argh){
+        
+    	Scanner inp = new Scanner(System.in);
+    	n = inp.nextInt();
+    	thu(1);
+    }
+}
