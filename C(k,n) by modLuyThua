@@ -1,0 +1,58 @@
+import java.util.*;
+
+public class BT2 {
+
+	// Ta có ct tính tổ hợp C(k,n) = n*(n-1)*...*(n-k-1)/k!;
+    static final int MOD = 1000000007;
+
+    /*
+     Theo định lý Fermat nhỏ thì a^p-1 chia cho p dư 1
+     Khi đó thì a^p-2 chia cho p sẽ dư 1/a = a^-1
+     Hay a^p-2 ≡ a^1 (mod p)
+    */
+    
+    // Tạo hàm tính a^n mod p với số n rất lớn
+    
+    public static long modluythua(long coso, long somu, int mod) {
+        long kq = 1;
+        while (somu > 0) {
+            if (somu % 2 == 1) kq = (kq * coso) % mod;
+            coso = (coso * coso) % mod;
+            somu /= 2;
+        }
+        return kq;
+    }
+
+    // Tính tổ hợp chập k của n
+    
+    public static long tohop(int k, int n) {
+        if (k > n || k < 0) return 0;
+        long ts = 1; 
+        long ms = 1; 
+
+        // Tử số: n*(n-1)*...*(n-k+1)
+        for (int i = 0; i < k; i++) {
+            ts = (ts * (n - i)) % MOD;
+        }
+
+        // Mẫu số: k!
+        for (int i = 1; i <= k; i++) {
+            ms = (ms * i) % MOD;
+        }
+
+        // Kết quả: tuSo * (mauSo^-1) % MOD
+        return (ts * modluythua(ms, MOD - 2, MOD)) % MOD;
+    }
+
+    public static void main(String[] args) {
+    	
+        Scanner inp = new Scanner(System.in);
+
+        int k = inp.nextInt();
+        
+        int n = inp.nextInt();
+
+ 
+        System.out.println(tohop(k,n));
+    }
+}
