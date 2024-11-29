@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class BT3 {
+    public static void main(String[] args) {
+    	
+        Scanner scanner = new Scanner(System.in);
+
+        int length = scanner.nextInt();
+
+        scanner.nextLine();
+
+        String InStr = scanner.nextLine();
+
+        String f = scanner.nextLine();
+        
+        String l = scanner.nextLine();
+        
+        char a = f.charAt(0);
+
+        char b = l.charAt(0);
+
+        int d = 0;
+        StringBuilder str = new StringBuilder();
+        
+        for (char ch:InStr.toCharArray()) {
+            if (ch == a) {
+                d++;
+                str.append(b);
+            } else {
+                str.append(ch);
+            }
+        }
+        System.out.println(d + " " + str.toString());
+    }
+}
