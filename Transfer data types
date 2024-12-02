@@ -1,1 +1,10 @@
-
+1.  Số sang xâu: toString();
+    Sử dụng <type>Value() để chuyển từ đối tượng của lớp bao thành giá trị nguyên thủy của đối tượng tương ứng
+      Float objF = new Float(“4.67”);
+      float f = objF.floatValue(); // f=4.67F
+      int i = objF.intValue(); //i=4
+    Sử dụng parse<type>() và valueOf() để chuyển xâu thành các giá trị số.
+      int i = Integer.parseInt(“123”); //i=123
+      double d = Double.parseDouble(“1.5”) ; // d=1.5
+      Double objF2 = Double.valueOf(“-36.12”);
+      long l = objF2.longValue(); // l=-36L
