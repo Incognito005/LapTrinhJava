@@ -8,3 +8,15 @@
       double d = Double.parseDouble(“1.5”) ; // d=1.5
       Double objF2 = Double.valueOf(“-36.12”);
       long l = objF2.longValue(); // l=-36L
+
+2.  Các phương thức kiểm tra xem 1 kí tự có phải là ...:
+    is.Digit(): Kiểm tra xem một ký tự (character) có phải là một chữ số (digit) hay không.
+    isLetter(char ch): Kiểm tra xem ký tự có phải là một chữ cái (A-Z hoặc a-z, không bao gồm số hoặc ký tự đặc biệt) hay không.
+    isLetterOrDigit(char ch): Kiểm tra xem ký tự có phải là chữ cái hoặc chữ số hay không.
+    isWhitespace(char ch): Kiểm tra xem ký tự có phải là khoảng trắng (space, tab, newline, v.v.) hay không.
+    isUpperCase(char ch): Kiểm tra xem ký tự có phải là chữ in hoa hay không.
+    isLowerCase(char ch): Kiểm tra xem ký tự có phải là chữ thường hay không.
+    Character.is...(): Trả về true nếu đúng và false nếu sai.
+
+3.  Chuyển một ký tự (chữ số) thành giá trị số nguyên tương ứng, dựa trên hệ cơ số được chỉ định.
+    
