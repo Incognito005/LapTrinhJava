@@ -53,7 +53,7 @@
     System.out.println(sb.replace(int start, int end, String str)): Thay thế chuỗi con từ start đến end - 1 bằng chuỗi mới str
     System.out.println(sb.reverse()): Đảo ngược chuỗi.
 
-8. StringBuffer
+8. Trong StringBuffer, các phương thức giống như trong StringBuilder.
 
 
     
